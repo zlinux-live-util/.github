@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="zlinux-live-util">
   <title>zlinux-live-util</title>
-  <desc>A lilac display with a shell prompt and a magenta live indicator, on a deep violet field.</desc>
+  <desc>A lilac display with a shell prompt and a magenta live indicator, on a flat violet background.</desc>
   <!--
     Org avatar source. GitHub displays avatars as circles, so the background is
     full-bleed and the mark stays inside the inscribed circle (r=256).
@@ -9,42 +9,27 @@
     a magenta live dot (the stream is live) beside a shell prompt (the tooling
     behind it is native Linux, not an embedded browser).
 
-    Ground: a radial violet field centred on the mark, plus two soft nebula
-    washes. It is radial rather than linear on purpose — a top-to-bottom gradient
-    left the bottom third of the circle nearly black, so the top and bottom read
-    as "uncovered" flat bands once the avatar is cropped to a circle.
+    Background: one flat violet (#1b1235), no gradient. Sampled edge to edge it
+    is a single value, so the avatar cannot read as a field that the background
+    "missed". The only falloff is the mark's own glow, tightened to blur 10 so it
+    hugs the display instead of washing the whole circle.
 
     Glyph geometry is composed from Lucide (ISC) — the "monitor" frame and the
     square-terminal prompt — see ATTRIBUTION.md for the licenses.
   -->
   <defs>
-    <radialGradient id="ground" cx="0.5" cy="0.47" r="0.78">
-      <stop offset="0" stop-color="#241547"/>
-      <stop offset="0.55" stop-color="#150e2c"/>
-      <stop offset="1" stop-color="#0b0719"/>
-    </radialGradient>
-    <radialGradient id="nebula-a" cx="0.26" cy="0.24" r="0.55">
-      <stop offset="0" stop-color="#6d3fd0" stop-opacity="0.20"/>
-      <stop offset="1" stop-color="#6d3fd0" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="nebula-b" cx="0.76" cy="0.80" r="0.52">
-      <stop offset="0" stop-color="#3d2688" stop-opacity="0.22"/>
-      <stop offset="1" stop-color="#3d2688" stop-opacity="0"/>
-    </radialGradient>
     <filter id="halo" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="14"/>
+      <feGaussianBlur stdDeviation="10"/>
     </filter>
     <filter id="mid" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="5"/>
+      <feGaussianBlur stdDeviation="4"/>
     </filter>
   </defs>
 
-  <rect width="512" height="512" fill="url(#ground)"/>
-  <rect width="512" height="512" fill="url(#nebula-a)"/>
-  <rect width="512" height="512" fill="url(#nebula-b)"/>
+  <rect width="512" height="512" fill="#1b1235"/>
 
   <g transform="translate(100 94) scale(13)" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <g filter="url(#halo)" stroke="#8b6cff" stroke-opacity="0.55" stroke-width="7"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M12 17v4"/><path d="M8 21h8"/><path d="m10.3 7.6 2.4 2.4-2.4 2.4"/><path d="M14.3 12.4h3.5"/></g>
+    <g filter="url(#halo)" stroke="#8b6cff" stroke-opacity="0.45" stroke-width="7"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M12 17v4"/><path d="M8 21h8"/><path d="m10.3 7.6 2.4 2.4-2.4 2.4"/><path d="M14.3 12.4h3.5"/></g>
     <g filter="url(#mid)" stroke="#a98bff" stroke-opacity="0.8" stroke-width="3.6"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M12 17v4"/><path d="M8 21h8"/><path d="m10.3 7.6 2.4 2.4-2.4 2.4"/><path d="M14.3 12.4h3.5"/></g>
     <g stroke="#ece7ff" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M12 17v4"/><path d="M8 21h8"/><path d="m10.3 7.6 2.4 2.4-2.4 2.4"/><path d="M14.3 12.4h3.5"/></g>
     <circle cx="6.8" cy="10" r="1.7" fill="#ff5fd2" filter="url(#halo)"/>

@@ -1,21 +1,21 @@
 # Avatar attribution
 
 `avatar.svg`, `avatar-512.png`, `avatar-64.png` and `avatar-32.png` are a custom
-mark: a starfield purple ground with a display on it. The glyph geometry is
+mark: a flat violet background with a display on it. The glyph geometry is
 composed from [Lucide](https://lucide.dev) v1.48.0 (via the `lucide-static`
 package) — the `monitor` frame and stand, and the shell prompt from
 `square-terminal`.
 
-The ground, layout, palette and the live indicator are ours:
+The background, layout, palette and the live indicator are ours:
 
-- **Ground**: a radial violet field centred on the mark (`#241547` → `#150e2c` →
-  `#0b0719`) plus two soft nebula washes (violet at 0.20 / 0.22) — smooth
-  gradients only, deliberately no star particles, which turned into noise at
-  avatar sizes. It is radial rather than linear because a top-to-bottom gradient
-  left the bottom third of the circle nearly black, so once cropped the top and
-  bottom read as flat bands the gradient had "missed".
-- **Display**: lilac `#ece7ff` core over a muted violet glow — a wide halo
-  (`feGaussianBlur` 14, opacity 0.55) and a tight mid layer (blur 5). The
+- **Background**: one flat violet, `#1b1235`, no gradient at all. Earlier
+  revisions used a linear, then a radial, then a nebula-washed ground; cropped to
+  a circle each of them left the top and bottom of the field reading as
+  "uncovered". A flat fill samples to a single value edge to edge, so that
+  failure mode is gone. The only falloff left is the mark's own glow, kept tight
+  (blur 10, opacity 0.45) so it hugs the display.
+- **Display**: lilac `#ece7ff` core over a muted violet glow — a halo
+  (`feGaussianBlur` 10, opacity 0.45) and a tighter mid layer (blur 4). The
   committed PNGs have the glow baked in; if an SVG viewer has no filter support
   the halo and mid layer drop out and a clean flat lilac mark remains.
 - **Live indicator**: a magenta `#ff5fd2` dot inside the screen beside the prompt.
