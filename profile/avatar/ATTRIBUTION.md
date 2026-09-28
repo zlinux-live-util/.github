@@ -1,12 +1,12 @@
 # Avatar attribution
 
 `avatar.svg`, `avatar-512.png`, `avatar-64.png` and `avatar-32.png` are a custom
-mark: a background gradient and a ring drawn by us, plus glyph geometry composed
+mark: a background gradient with a faint radial lift, plus glyph geometry composed
 from [Lucide](https://lucide.dev) v1.48.0 (via the `lucide-static` package) —
 the `monitor` frame and stand, and the shell prompt from `square-terminal`.
 
-The ring geometry and palette are ours, following pw-mpris-visualcard's colours
-(`#16171c`-family ground, white at the card's 0.09 ring / 0.92 accent opacities).
+The ground, lift and layout are ours, following pw-mpris-visualcard's colours
+(`#16171c`-family ground, white accents).
 
 Two licenses apply, because Lucide's `monitor` is one of the icons Lucide derives
 from [Feather](https://feathericons.com) (Lucide's own list names `monitor`, with
@@ -82,5 +82,8 @@ Rendered for comparison and not used:
 - **Tux** (Simple Icons' `linux`, files under CC0 1.0): the Linux mascot is
   everyone's penguin and using it as this org's own identity comes close to
   claiming the Linux brand — weak differentiation and avoidable trademark doubt.
+- **Outline ring around the mark** (a nod to the card's progress ring): at avatar
+  sizes the gap made it read as a loading spinner, and it competed with the
+  monitor for attention. Replaced by the radial lift.
 - **`monitor-play`** (screen with a play triangle): says "video", not "Linux".
-- **`radio`** (broadcast arcs): its arcs collide with the ring at avatar sizes.
+- **`radio`** (broadcast arcs): dense concentric strokes melt into a blob at 32px.
