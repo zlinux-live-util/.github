@@ -1,0 +1,86 @@
+# Avatar attribution
+
+`avatar.svg`, `avatar-512.png`, `avatar-64.png` and `avatar-32.png` are a custom
+mark: a background gradient and a ring drawn by us, plus glyph geometry composed
+from [Lucide](https://lucide.dev) v1.48.0 (via the `lucide-static` package) —
+the `monitor` frame and stand, and the shell prompt from `square-terminal`.
+
+The ring geometry and palette are ours, following pw-mpris-visualcard's colours
+(`#16171c`-family ground, white at the card's 0.09 ring / 0.92 accent opacities).
+
+Two licenses apply, because Lucide's `monitor` is one of the icons Lucide derives
+from [Feather](https://feathericons.com) (Lucide's own list names `monitor`, with
+the MIT notice below applying to it; `square-terminal` is under Lucide's ISC
+license).
+
+## Lucide — ISC License
+
+```
+ISC License
+
+Copyright (c) 2026 Lucide Icons and Contributors
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+```
+
+## Feather — MIT License (icons Lucide derives from Feather, incl. `monitor`)
+
+```
+The MIT License (MIT)
+
+Copyright (c) 2013-present Cole Bemis
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+Upstream notices:
+<https://github.com/lucide-icons/lucide/blob/main/LICENSE>
+
+## Regenerating
+
+From this directory:
+
+```bash
+rsvg-convert -w 512 -h 512 avatar.svg -o avatar-512.png
+rsvg-convert -w 64  -h 64  avatar.svg -o avatar-64.png
+rsvg-convert -w 32  -h 32  avatar.svg -o avatar-32.png
+```
+
+`avatar-512.png` is the one to upload: GitHub displays avatars as circles, so the
+ground is full-bleed and the mark stays inside the inscribed circle.
+
+## Rejected alternatives
+
+Rendered for comparison and not used:
+
+- **Tux** (Simple Icons' `linux`, files under CC0 1.0): the Linux mascot is
+  everyone's penguin and using it as this org's own identity comes close to
+  claiming the Linux brand — weak differentiation and avoidable trademark doubt.
+- **`monitor-play`** (screen with a play triangle): says "video", not "Linux".
+- **`radio`** (broadcast arcs): its arcs collide with the ring at avatar sizes.

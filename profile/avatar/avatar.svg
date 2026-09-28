@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="zlinux-live-util">
+  <title>zlinux-live-util</title>
+  <!--
+    Org avatar source. GitHub displays avatars as circles, so the background is
+    full-bleed and the mark stays inside the inscribed circle (r=256).
+
+    The mark says both halves of what this org is: a display (the stream, which
+    leaves as video) driven by a shell prompt (native Linux tooling, not an
+    embedded browser). Palette follows pw-mpris-visualcard: a #16171c-family
+    ground with white at the card's 0.09 ring / 0.92 accent opacities.
+
+    Glyph geometry is composed from Lucide (ISC) — the "monitor" frame and the
+    square-terminal prompt — see ATTRIBUTION.md for the notices.
+  -->
+  <defs>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c1e26"/>
+      <stop offset="1" stop-color="#111218"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" fill="url(#ground)"/>
+
+  <!-- progress ring: faint full track plus a strong accent arc, as drawn on the card -->
+  <circle cx="256" cy="256" r="176" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="14"/>
+  <path d="M256 80 A176 176 0 0 1 428.88 289" fill="none" stroke="#ffffff" stroke-opacity="0.92"
+        stroke-width="14" stroke-linecap="round"/>
+
+  <!-- display (screen + stand) with a shell prompt on it -->
+  <g transform="translate(140.8 136) scale(9.6)" fill="none" stroke="#f4f4f5" stroke-width="2"
+     stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="3" width="20" height="14" rx="2"/>
+    <path d="M12 17v4"/>
+    <path d="M8 21h8"/>
+    <path d="m6.5 8 2.5 2.5-2.5 2.5"/>
+    <path d="M12 13h5"/>
+  </g>
+</svg>
