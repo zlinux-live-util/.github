@@ -8,10 +8,12 @@ package) — the `monitor` frame and stand, and the shell prompt from
 
 The ground, layout, palette and the live indicator are ours:
 
-- **Ground**: a near-black violet gradient (`#100a20` → `#04030a`) with two soft
-  nebula washes (violet at 0.16 / 0.18) — smooth gradients only, deliberately no
-  star particles, which turned into noise at avatar sizes. The ground is kept
-  this dark so the mark carries the avatar rather than the field behind it.
+- **Ground**: a radial violet field centred on the mark (`#241547` → `#150e2c` →
+  `#0b0719`) plus two soft nebula washes (violet at 0.20 / 0.22) — smooth
+  gradients only, deliberately no star particles, which turned into noise at
+  avatar sizes. It is radial rather than linear because a top-to-bottom gradient
+  left the bottom third of the circle nearly black, so once cropped the top and
+  bottom read as flat bands the gradient had "missed".
 - **Display**: lilac `#ece7ff` core over a muted violet glow — a wide halo
   (`feGaussianBlur` 14, opacity 0.55) and a tight mid layer (blur 5). The
   committed PNGs have the glow baked in; if an SVG viewer has no filter support
