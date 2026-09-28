@@ -13,8 +13,8 @@ there.
 
 ## Projects
 
-| Project | Description | Footprint | License |
-| --- | --- | --- | --- |
-| [pw-mpris-visualcard](https://github.com/zlinux-live-util/pw-mpris-visualcard) | Now-playing card for OBS, published as a PipeWire video node. One process, no browser, no child processes, no HTTP. | ≈0.25% CPU idle · 6–25 MB private memory · 0 child processes | MIT |
+| Project | Description | License |
+| --- | --- | --- |
+| [pw-mpris-visualcard](https://github.com/zlinux-live-util/pw-mpris-visualcard) | Now-playing card for OBS, published as a PipeWire video node. One process, no browser, no child processes, no HTTP. | MIT |
 
 Contributions are welcome; each project's README states what a patch must include.

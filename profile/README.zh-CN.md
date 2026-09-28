@@ -11,8 +11,8 @@
 
 ## 项目
 
-| 项目 | 说明 | 资源开销 | 许可 |
-| --- | --- | --- | --- |
-| [pw-mpris-visualcard](https://github.com/zlinux-live-util/pw-mpris-visualcard) | 把正在播放的音乐渲染成卡片，以 PipeWire 视频节点送进 OBS。单进程、不经过浏览器、零子进程、不经过 HTTP。 | 空闲约 0.25% CPU · 私有内存 6–25 MB · 子进程 0 | MIT |
+| 项目 | 说明 | 许可 |
+| --- | --- | --- |
+| [pw-mpris-visualcard](https://github.com/zlinux-live-util/pw-mpris-visualcard) | 把正在播放的音乐渲染成卡片，以 PipeWire 视频节点送进 OBS。单进程、不经过浏览器、零子进程、不经过 HTTP。 | MIT |
 
 欢迎贡献；每个项目的 README 写明了 patch 需要附带什么。
