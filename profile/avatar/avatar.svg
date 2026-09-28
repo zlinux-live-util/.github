@@ -9,26 +9,26 @@
     a magenta live dot (the stream is live) beside a shell prompt (the tooling
     behind it is native Linux, not an embedded browser).
 
-    Look: deep violet ground with two soft nebula washes (smooth gradients, no
-    particles) and the display drawn in lilac over a muted violet glow. An
-    earlier version used saturated cyan/magenta neon; at 14px blur the halo read
-    as a glow sticker and washed the mark, so the halo is softer here.
+    Look: a near-black violet ground with two soft nebula washes (smooth
+    gradients, no particles) and the display drawn in lilac over a muted violet
+    glow — the ground is kept dark so the mark carries the avatar, rather than
+    the field behind it.
 
     Glyph geometry is composed from Lucide (ISC) — the "monitor" frame and the
     square-terminal prompt — see ATTRIBUTION.md for the licenses.
   -->
   <defs>
     <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#1c1238"/>
-      <stop offset="1" stop-color="#0a0616"/>
+      <stop offset="0" stop-color="#100a20"/>
+      <stop offset="1" stop-color="#04030a"/>
     </linearGradient>
     <radialGradient id="nebula-a" cx="0.28" cy="0.22" r="0.6">
-      <stop offset="0" stop-color="#7b4bd8" stop-opacity="0.22"/>
-      <stop offset="1" stop-color="#7b4bd8" stop-opacity="0"/>
+      <stop offset="0" stop-color="#6d3fd0" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#6d3fd0" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="nebula-b" cx="0.78" cy="0.82" r="0.55">
-      <stop offset="0" stop-color="#4a2f9e" stop-opacity="0.24"/>
-      <stop offset="1" stop-color="#4a2f9e" stop-opacity="0"/>
+      <stop offset="0" stop-color="#3d2688" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#3d2688" stop-opacity="0"/>
     </radialGradient>
     <filter id="halo" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="14"/>
