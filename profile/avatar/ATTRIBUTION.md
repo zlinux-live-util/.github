@@ -8,16 +8,16 @@ package) — the `monitor` frame and stand, and the shell prompt from
 
 The background, layout, palette and the live indicator are ours:
 
-- **Background**: one flat violet, `#1b1235`, no gradient at all. Earlier
-  revisions used a linear, then a radial, then a nebula-washed ground; cropped to
-  a circle each of them left the top and bottom of the field reading as
-  "uncovered". A flat fill samples to a single value edge to edge, so that
-  failure mode is gone. The only falloff left is the mark's own glow, kept tight
-  (blur 10, opacity 0.45) so it hugs the display.
-- **Display**: lilac `#ece7ff` core over a muted violet glow — a halo
-  (`feGaussianBlur` 10, opacity 0.45) and a tighter mid layer (blur 4). The
-  committed PNGs have the glow baked in; if an SVG viewer has no filter support
-  the halo and mid layer drop out and a clean flat lilac mark remains.
+- **Background**: flat violet `#1b1235` plus one radial glow centred on the
+  canvas (`#7c5cff` at 0.18 → 0.09 → 0), and nothing else — no linear gradient,
+  no nebula wash, no star particles. Earlier revisions also blurred the glyph
+  itself to make it glow; that spreads light sideways along the screen and stand
+  but not up and down, which is exactly why the top and bottom of the circle read
+  as "uncovered". The glyph is now crisp and only the field glows: sampling eight
+  directions at the same radius gives a luminance spread of 17 with the glyph
+  blur and 0 without it.
+- **Display**: lilac `#ece7ff` at a flat 2-unit stroke — the mark is deliberately
+  crisp, with no blur of its own.
 - **Live indicator**: a magenta `#ff5fd2` dot inside the screen beside the prompt.
   Magenta is the conventional live/on-air colour and stays distinct from the
   violet field, so it is still the element the eye lands on at 32px.

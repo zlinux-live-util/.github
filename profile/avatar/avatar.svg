@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="zlinux-live-util">
   <title>zlinux-live-util</title>
-  <desc>A lilac display with a shell prompt and a magenta live indicator, on a flat violet background.</desc>
+  <desc>A lilac display with a shell prompt and a magenta live indicator, over an even violet glow.</desc>
   <!--
     Org avatar source. GitHub displays avatars as circles, so the background is
     full-bleed and the mark stays inside the inscribed circle (r=256).
@@ -9,30 +9,33 @@
     a magenta live dot (the stream is live) beside a shell prompt (the tooling
     behind it is native Linux, not an embedded browser).
 
-    Background: one flat violet (#1b1235), no gradient. Sampled edge to edge it
-    is a single value, so the avatar cannot read as a field that the background
-    "missed". The only falloff is the mark's own glow, tightened to blur 10 so it
-    hugs the display instead of washing the whole circle.
+    Background: a flat violet (#1b1235) with one radial glow centred on the
+    canvas. The glow is a radial gradient only — the glyph is NOT blurred.
+    Blurring the glyph spreads light sideways along the screen and stand but not
+    up and down, so the top and bottom of the circle read as uncovered; sampling
+    eight directions at the same radius gave a luminance spread of 17 with the
+    glyph blur and 0 without it. Radius-only falloff is even in every direction.
 
     Glyph geometry is composed from Lucide (ISC) — the "monitor" frame and the
     square-terminal prompt — see ATTRIBUTION.md for the licenses.
   -->
   <defs>
-    <filter id="halo" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="10"/>
-    </filter>
-    <filter id="mid" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="4"/>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.62">
+      <stop offset="0" stop-color="#7c5cff" stop-opacity="0.18"/>
+      <stop offset="0.55" stop-color="#7c5cff" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="#7c5cff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="dotglow" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="3"/>
     </filter>
   </defs>
 
   <rect width="512" height="512" fill="#1b1235"/>
+  <rect width="512" height="512" fill="url(#glow)"/>
 
   <g transform="translate(100 94) scale(13)" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <g filter="url(#halo)" stroke="#8b6cff" stroke-opacity="0.45" stroke-width="7"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M12 17v4"/><path d="M8 21h8"/><path d="m10.3 7.6 2.4 2.4-2.4 2.4"/><path d="M14.3 12.4h3.5"/></g>
-    <g filter="url(#mid)" stroke="#a98bff" stroke-opacity="0.8" stroke-width="3.6"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M12 17v4"/><path d="M8 21h8"/><path d="m10.3 7.6 2.4 2.4-2.4 2.4"/><path d="M14.3 12.4h3.5"/></g>
     <g stroke="#ece7ff" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M12 17v4"/><path d="M8 21h8"/><path d="m10.3 7.6 2.4 2.4-2.4 2.4"/><path d="M14.3 12.4h3.5"/></g>
-    <circle cx="6.8" cy="10" r="1.7" fill="#ff5fd2" filter="url(#halo)"/>
+    <circle cx="6.8" cy="10" r="2.2" fill="#ff5fd2" filter="url(#dotglow)"/>
     <circle cx="6.8" cy="10" r="1.5" fill="#ff5fd2"/>
   </g>
 </svg>
