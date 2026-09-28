@@ -1,40 +1,65 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="zlinux-live-util">
   <title>zlinux-live-util</title>
+  <desc>A neon-cyan display with a shell prompt and a magenta live indicator on screen.</desc>
   <!--
     Org avatar source. GitHub displays avatars as circles, so the background is
     full-bleed and the mark stays inside the inscribed circle (r=256).
 
-    The mark says both halves of what this org is: a display (the stream, which
-    leaves as video) driven by a shell prompt (native Linux tooling, not an
-    embedded browser). Depth comes from a faint radial glow behind the mark —
-    an outline ring was tried first and dropped: at avatar sizes it read as a
-    loading spinner and competed with the monitor.
+    The mark carries both halves of what this org is, on one line of the screen:
+    a magenta live dot (the stream is live) next to a shell prompt (the tooling
+    behind it is native Linux, not an embedded browser).
 
-    Palette follows pw-mpris-visualcard: a #16171c-family ground with white
-    accents. Glyph geometry is composed from Lucide (ISC) — the "monitor" frame
-    and the square-terminal prompt — see ATTRIBUTION.md for the notices.
+    Neon is three stacked strokes of the same geometry: a wide blurred halo, a
+    tight blurred mid layer, and a crisp near-white core. If an SVG viewer has
+    no filter support the halo and mid layer simply disappear, leaving a clean
+    flat mark — the PNGs committed here have the glow baked in.
+
+    Palette: near-black ground, cyan #22e0ff for the display, magenta #ff2d95
+    for the live dot. Glyph geometry is composed from Lucide (ISC) — the
+    "monitor" frame and the square-terminal prompt — see ATTRIBUTION.md.
   -->
   <defs>
     <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#1c1e26"/>
-      <stop offset="1" stop-color="#111218"/>
+      <stop offset="0" stop-color="#141621"/>
+      <stop offset="1" stop-color="#0a0b11"/>
     </linearGradient>
-    <radialGradient id="lift" cx="0.5" cy="0.44" r="0.55">
-      <stop offset="0" stop-color="#ffffff" stop-opacity="0.075"/>
-      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
-    </radialGradient>
+    <filter id="halo" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="mid" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
   </defs>
 
   <rect width="512" height="512" fill="url(#ground)"/>
-  <rect width="512" height="512" fill="url(#lift)"/>
 
-  <!-- display (screen + stand) with a shell prompt on it -->
-  <g transform="translate(100 94) scale(13)" fill="none" stroke="#f4f4f5" stroke-width="2"
-     stroke-linecap="round" stroke-linejoin="round">
-    <rect x="2" y="3" width="20" height="14" rx="2"/>
-    <path d="M12 17v4"/>
-    <path d="M8 21h8"/>
-    <path d="m6.5 8 2.5 2.5-2.5 2.5"/>
-    <path d="M12 13h5"/>
+  <g transform="translate(100 94) scale(13)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- display: screen + stand + prompt -->
+    <g filter="url(#halo)" stroke="#22e0ff" stroke-opacity="0.85" stroke-width="7">
+      <rect x="2" y="3" width="20" height="14" rx="2"/>
+      <path d="M12 17v4"/>
+      <path d="M8 21h8"/>
+      <path d="m10.3 7.6 2.4 2.4-2.4 2.4"/>
+      <path d="M14.3 12.4h3.5"/>
+    </g>
+    <g filter="url(#mid)" stroke="#22e0ff" stroke-opacity="0.95" stroke-width="3.6">
+      <rect x="2" y="3" width="20" height="14" rx="2"/>
+      <path d="M12 17v4"/>
+      <path d="M8 21h8"/>
+      <path d="m10.3 7.6 2.4 2.4-2.4 2.4"/>
+      <path d="M14.3 12.4h3.5"/>
+    </g>
+    <g stroke="#f2fdff" stroke-width="2">
+      <rect x="2" y="3" width="20" height="14" rx="2"/>
+      <path d="M12 17v4"/>
+      <path d="M8 21h8"/>
+      <path d="m10.3 7.6 2.4 2.4-2.4 2.4"/>
+      <path d="M14.3 12.4h3.5"/>
+    </g>
+
+    <!-- live indicator -->
+    <circle cx="6.8" cy="10" r="1.7" fill="#ff2d95" filter="url(#halo)"/>
+    <circle cx="6.8" cy="10" r="1.7" fill="#ff2d95" filter="url(#mid)"/>
+    <circle cx="6.8" cy="10" r="1.45" fill="#ff8ac6"/>
   </g>
 </svg>

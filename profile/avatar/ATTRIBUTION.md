@@ -1,12 +1,21 @@
 # Avatar attribution
 
 `avatar.svg`, `avatar-512.png`, `avatar-64.png` and `avatar-32.png` are a custom
-mark: a background gradient with a faint radial lift, plus glyph geometry composed
-from [Lucide](https://lucide.dev) v1.48.0 (via the `lucide-static` package) —
-the `monitor` frame and stand, and the shell prompt from `square-terminal`.
+mark: a near-black ground with a neon display on it. The glyph geometry is
+composed from [Lucide](https://lucide.dev) v1.48.0 (via the `lucide-static`
+package) — the `monitor` frame and stand, and the shell prompt from
+`square-terminal`.
 
-The ground, lift and layout are ours, following pw-mpris-visualcard's colours
-(`#16171c`-family ground, white accents).
+The ground, layout, neon treatment and the live indicator are ours:
+
+- **Neon** is three stacked strokes of the same geometry — a wide blurred halo
+  (`feGaussianBlur` 14), a tight blurred mid layer (blur 5) and a crisp near-white
+  core. The committed PNGs have the glow baked in; if an SVG viewer has no filter
+  support the halo and mid layer drop out and a clean flat mark remains.
+- **Cyan `#22e0ff`** draws the display; **magenta `#ff2d95`** draws the live
+  indicator inside the screen, next to the prompt. Cyan reads "screen/neon",
+  magenta is the conventional live/on-air colour, and the pair stays legible at
+  32px.
 
 Two licenses apply, because Lucide's `monitor` is one of the icons Lucide derives
 from [Feather](https://feathericons.com) (Lucide's own list names `monitor`, with
@@ -84,6 +93,11 @@ Rendered for comparison and not used:
   claiming the Linux brand — weak differentiation and avoidable trademark doubt.
 - **Outline ring around the mark** (a nod to the card's progress ring): at avatar
   sizes the gap made it read as a loading spinner, and it competed with the
-  monitor for attention. Replaced by the radial lift.
+  monitor for attention. Replaced by the neon halo.
+- **Magenta live dot with broadcast arcs outside the screen**: the arcs crowd the
+  canvas corner and turn into a scribble at 32px; the lone dot inside the screen
+  reads better and stays balanced.
+- **Play triangle inside the screen**: strong "video" read, but it is the one
+  element that would have to go for the prompt, so both cues could not coexist.
 - **`monitor-play`** (screen with a play triangle): says "video", not "Linux".
 - **`radio`** (broadcast arcs): dense concentric strokes melt into a blob at 32px.
