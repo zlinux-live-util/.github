@@ -1,21 +1,23 @@
 # Avatar attribution
 
 `avatar.svg`, `avatar-512.png`, `avatar-64.png` and `avatar-32.png` are a custom
-mark: a near-black ground with a neon display on it. The glyph geometry is
+mark: a starfield purple ground with a display on it. The glyph geometry is
 composed from [Lucide](https://lucide.dev) v1.48.0 (via the `lucide-static`
 package) — the `monitor` frame and stand, and the shell prompt from
 `square-terminal`.
 
-The ground, layout, neon treatment and the live indicator are ours:
+The ground, layout, palette and the live indicator are ours:
 
-- **Neon** is three stacked strokes of the same geometry — a wide blurred halo
-  (`feGaussianBlur` 14), a tight blurred mid layer (blur 5) and a crisp near-white
-  core. The committed PNGs have the glow baked in; if an SVG viewer has no filter
-  support the halo and mid layer drop out and a clean flat mark remains.
-- **Cyan `#22e0ff`** draws the display; **magenta `#ff2d95`** draws the live
-  indicator inside the screen, next to the prompt. Cyan reads "screen/neon",
-  magenta is the conventional live/on-air colour, and the pair stays legible at
-  32px.
+- **Ground**: a deep violet gradient (`#1c1238` → `#0a0616`) with two soft nebula
+  washes — smooth gradients only, deliberately no star particles, which turned
+  into noise at avatar sizes.
+- **Display**: lilac `#ece7ff` core over a muted violet glow — a wide halo
+  (`feGaussianBlur` 14, opacity 0.55) and a tight mid layer (blur 5). The
+  committed PNGs have the glow baked in; if an SVG viewer has no filter support
+  the halo and mid layer drop out and a clean flat lilac mark remains.
+- **Live indicator**: a magenta `#ff5fd2` dot inside the screen beside the prompt.
+  Magenta is the conventional live/on-air colour and stays distinct from the
+  violet field, so it is still the element the eye lands on at 32px.
 
 Two licenses apply, because Lucide's `monitor` is one of the icons Lucide derives
 from [Feather](https://feathericons.com) (Lucide's own list names `monitor`, with

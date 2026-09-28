@@ -1,28 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="zlinux-live-util">
   <title>zlinux-live-util</title>
-  <desc>A neon-cyan display with a shell prompt and a magenta live indicator on screen.</desc>
+  <desc>A lilac display with a shell prompt and a magenta live indicator, on a deep violet ground.</desc>
   <!--
     Org avatar source. GitHub displays avatars as circles, so the background is
     full-bleed and the mark stays inside the inscribed circle (r=256).
 
     The mark carries both halves of what this org is, on one line of the screen:
-    a magenta live dot (the stream is live) next to a shell prompt (the tooling
+    a magenta live dot (the stream is live) beside a shell prompt (the tooling
     behind it is native Linux, not an embedded browser).
 
-    Neon is three stacked strokes of the same geometry: a wide blurred halo, a
-    tight blurred mid layer, and a crisp near-white core. If an SVG viewer has
-    no filter support the halo and mid layer simply disappear, leaving a clean
-    flat mark — the PNGs committed here have the glow baked in.
+    Look: deep violet ground with two soft nebula washes (smooth gradients, no
+    particles) and the display drawn in lilac over a muted violet glow. An
+    earlier version used saturated cyan/magenta neon; at 14px blur the halo read
+    as a glow sticker and washed the mark, so the halo is softer here.
 
-    Palette: near-black ground, cyan #22e0ff for the display, magenta #ff2d95
-    for the live dot. Glyph geometry is composed from Lucide (ISC) — the
-    "monitor" frame and the square-terminal prompt — see ATTRIBUTION.md.
+    Glyph geometry is composed from Lucide (ISC) — the "monitor" frame and the
+    square-terminal prompt — see ATTRIBUTION.md for the licenses.
   -->
   <defs>
     <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#141621"/>
-      <stop offset="1" stop-color="#0a0b11"/>
+      <stop offset="0" stop-color="#1c1238"/>
+      <stop offset="1" stop-color="#0a0616"/>
     </linearGradient>
+    <radialGradient id="nebula-a" cx="0.28" cy="0.22" r="0.6">
+      <stop offset="0" stop-color="#7b4bd8" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#7b4bd8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula-b" cx="0.78" cy="0.82" r="0.55">
+      <stop offset="0" stop-color="#4a2f9e" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#4a2f9e" stop-opacity="0"/>
+    </radialGradient>
     <filter id="halo" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="14"/>
     </filter>
@@ -32,34 +39,14 @@
   </defs>
 
   <rect width="512" height="512" fill="url(#ground)"/>
+  <rect width="512" height="512" fill="url(#nebula-a)"/>
+  <rect width="512" height="512" fill="url(#nebula-b)"/>
 
   <g transform="translate(100 94) scale(13)" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <!-- display: screen + stand + prompt -->
-    <g filter="url(#halo)" stroke="#22e0ff" stroke-opacity="0.85" stroke-width="7">
-      <rect x="2" y="3" width="20" height="14" rx="2"/>
-      <path d="M12 17v4"/>
-      <path d="M8 21h8"/>
-      <path d="m10.3 7.6 2.4 2.4-2.4 2.4"/>
-      <path d="M14.3 12.4h3.5"/>
-    </g>
-    <g filter="url(#mid)" stroke="#22e0ff" stroke-opacity="0.95" stroke-width="3.6">
-      <rect x="2" y="3" width="20" height="14" rx="2"/>
-      <path d="M12 17v4"/>
-      <path d="M8 21h8"/>
-      <path d="m10.3 7.6 2.4 2.4-2.4 2.4"/>
-      <path d="M14.3 12.4h3.5"/>
-    </g>
-    <g stroke="#f2fdff" stroke-width="2">
-      <rect x="2" y="3" width="20" height="14" rx="2"/>
-      <path d="M12 17v4"/>
-      <path d="M8 21h8"/>
-      <path d="m10.3 7.6 2.4 2.4-2.4 2.4"/>
-      <path d="M14.3 12.4h3.5"/>
-    </g>
-
-    <!-- live indicator -->
-    <circle cx="6.8" cy="10" r="1.7" fill="#ff2d95" filter="url(#halo)"/>
-    <circle cx="6.8" cy="10" r="1.7" fill="#ff2d95" filter="url(#mid)"/>
-    <circle cx="6.8" cy="10" r="1.45" fill="#ff8ac6"/>
+    <g filter="url(#halo)" stroke="#8b6cff" stroke-opacity="0.55" stroke-width="7"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M12 17v4"/><path d="M8 21h8"/><path d="m10.3 7.6 2.4 2.4-2.4 2.4"/><path d="M14.3 12.4h3.5"/></g>
+    <g filter="url(#mid)" stroke="#a98bff" stroke-opacity="0.8" stroke-width="3.6"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M12 17v4"/><path d="M8 21h8"/><path d="m10.3 7.6 2.4 2.4-2.4 2.4"/><path d="M14.3 12.4h3.5"/></g>
+    <g stroke="#ece7ff" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M12 17v4"/><path d="M8 21h8"/><path d="m10.3 7.6 2.4 2.4-2.4 2.4"/><path d="M14.3 12.4h3.5"/></g>
+    <circle cx="6.8" cy="10" r="1.7" fill="#ff5fd2" filter="url(#halo)"/>
+    <circle cx="6.8" cy="10" r="1.5" fill="#ff5fd2"/>
   </g>
 </svg>
